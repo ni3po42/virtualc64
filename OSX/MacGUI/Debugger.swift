@@ -84,10 +84,12 @@ extension MyController {
                          ciaPA, ciaPB,
                          todHours, todMinutes, todSeconds, todTenth,
                          alarmHours, alarmMinutes, alarmSeconds, alarmTenth,
-                         ciaImr, ciaIcr,
-                         vicCycle, spriteY,
-                         potX, potY])
+                         ciaImr, ciaIcr])
     
+        assignFormatter(fmt8,
+                        [vicCycle, spriteY,
+                         potX, potY])
+        
         assignFormatter(fmt9,
                         [vicRasterline, vicIrqRasterline, spriteX, vicXCounter])
 

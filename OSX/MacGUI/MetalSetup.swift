@@ -43,7 +43,7 @@ public extension MetalView {
         precondition(device != nil, "Metal device must not be nil")
     
         // Metal layer
-        metalLayer = self.layer as! CAMetalLayer
+        metalLayer = self.layer as? CAMetalLayer
         precondition(metalLayer != nil, "Metal layer must not be nil")
         
         metalLayer.device = device
@@ -337,6 +337,10 @@ public extension MetalView {
             return
         }
         
+        let width = Int(layerWidth)
+        let height = Int(layerHeight)
+        
+        /*
         let width = (layerWidth < 2048) ? 2048 : Int(layerWidth)
         let height = (layerHeight < 2048) ? 2048 : Int(layerHeight)
         
@@ -346,6 +350,7 @@ public extension MetalView {
                 return // Old texture is sufficiently large
             }
         }
+        */
         
         let descriptor = MTLTextureDescriptor.texture2DDescriptor(
             pixelFormat: MTLPixelFormat.depth32Float,
