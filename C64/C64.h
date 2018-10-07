@@ -214,9 +214,9 @@ public:
     // Execution thread
     //
     
-    //! @brief    A mutex for implementing the suspend / resume mechanism
-    pthread_mutex_t mutex;
-
+    //! @brief    An invocation counter for implementing the suspend / resume mechanism
+    unsigned suspendCounter = 0;
+    
     //! @brief    The emulators execution thread
     pthread_t p;
     
