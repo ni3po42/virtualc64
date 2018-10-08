@@ -20,11 +20,11 @@
 
 #include "C64.h"
 
-VC1541::VC1541(unsigned deviceNr)
+VC1541::VC1541(unsigned nr)
 {
-    assert(deviceNr == 1 || deviceNr == 2);
+    assert(nr == 1 || nr == 2);
     
-    this->deviceNr = deviceNr;
+    deviceNr = nr;
     setDescription(deviceNr == 1 ? "Drive1" : "Drive2");
     debug(3, "Creating %s at address %p\n", getDescription());
 	
