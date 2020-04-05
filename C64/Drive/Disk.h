@@ -204,7 +204,6 @@ public:
     void ping();
 
     
-    
     //! @brief Returns write protection flag
     bool isWriteProtected() { return writeProtected; }
 
@@ -526,6 +525,11 @@ private:
      *  @return  Number of written bits.
      */
     size_t encodeSector(D64File *a, Track t, Sector sector, HeadPosition start, int gap);
+
+public:
+    
+    //! @brief   Returns a debug checksum for this disk
+    uint64_t fnv64() { return fnv_1a_64((uint8_t *)data.track, sizeof(data)); }
 };
     
 #endif
